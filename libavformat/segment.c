@@ -43,7 +43,7 @@
 #include "libavutil/timecode.h"
 #include "libavutil/time_internal.h"
 #include "libavutil/timestamp.h"
-#include "libavutil/strftime_micro.h"
+#include "libavutil/strftime_millis.h"
 
 typedef struct SegmentListEntry
 {
@@ -215,7 +215,7 @@ static int set_segment_filename(AVFormatContext *s)
         struct tm *tm, tmpbuf;
         time(&now0);
         tm = localtime_r(&now0, &tmpbuf);
-        if (!strftime_micro(buf, sizeof(buf), s->url, tm))
+        if (!strftime_millis(buf, sizeof(buf), s->url, tm))
         {
             av_log(oc, AV_LOG_ERROR, "Could not get segment filename with strftime\n");
             return AVERROR(EINVAL);
