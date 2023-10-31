@@ -8,4 +8,4 @@
 #include <math.h>
 
 size_t strftime_millis(char *ptr, size_t maxsize, const char *format, const struct timeval *tv);
-#endif
+#endif /* AVUTIL_STRFTIMEMILLIS_H */
