@@ -90,9 +90,9 @@ HEADERS = adler32.h                                                     \
           video_enc_params.h                                            \
           xtea.h                                                        \
           tea.h                                                         \
+          strftime_micro.h                                              \
           tx.h                                                          \
           film_grain_params.h                                           \
-          strftime_micro.h                                              \
           video_hint.h
 
 ARCH_HEADERS = bswap.h                                                  \
@@ -178,6 +178,7 @@ OBJS = adler32.o                                                        \
        xga_font_data.o                                                  \
        xtea.o                                                           \
        tea.o                                                            \
+       strftime_micro.o                                                 \
        tx.o                                                             \
        tx_float.o                                                       \
        tx_double.o                                                      \
@@ -186,7 +187,6 @@ OBJS = adler32.o                                                        \
        version.o                                                        \
        video_enc_params.o                                               \
        video_hint.o                                                     \
-       strftime_micro.o                                                 \
        film_grain_params.o                                              \
 
 
