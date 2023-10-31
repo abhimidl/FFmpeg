@@ -43,7 +43,7 @@
 #include "libavutil/timecode.h"
 #include "libavutil/time_internal.h"
 #include "libavutil/timestamp.h"
-#include "libavutil/strftime_millis.h"
+#include "libavutil/strftimemillis.h"
 
 typedef struct SegmentListEntry
 {

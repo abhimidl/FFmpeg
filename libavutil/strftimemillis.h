@@ -4,7 +4,8 @@
 #include <time.h>
 #include <math.h>
 
-#ifndef _STRFTIME_MILLIS_
-#define _STRFTIME_MILLIS_
+#ifndef AVUTIL_STRFTIMEMILLIS_H
+#define AVUTIL_STRFTIMEMILLIS_H
+
 size_t strftime_millis(char *ptr, size_t maxsize, const char *format, const struct timeval *tv);
 #endif

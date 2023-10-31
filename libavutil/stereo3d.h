@@ -45,7 +45,8 @@
 /**
  * List of possible 3D Types
  */
-enum AVStereo3DType {
+enum AVStereo3DType
+{
     /**
      * Video is not stereoscopic (and metadata has to be there).
      */
@@ -141,7 +142,8 @@ enum AVStereo3DType {
 /**
  * List of possible view types.
  */
-enum AVStereo3DView {
+enum AVStereo3DView
+{
     /**
      * Frame contains two packed views.
      */
@@ -161,7 +163,7 @@ enum AVStereo3DView {
 /**
  * Inverted views, Right/Bottom represents the left view.
  */
-#define AV_STEREO3D_FLAG_INVERT     (1 << 0)
+#define AV_STEREO3D_FLAG_INVERT (1 << 0)
 
 /**
  * Stereo 3D type: this structure describes how two videos are packed
@@ -170,7 +172,8 @@ enum AVStereo3DView {
  * @note The struct must be allocated with av_stereo3d_alloc() and
  *       its size is not a part of the public ABI.
  */
-typedef struct AVStereo3D {
+typedef struct AVStereo3D
+{
     /**
      * How views are packed within the video.
      */
