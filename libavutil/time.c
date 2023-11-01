@@ -84,8 +84,9 @@ int av_gettime_relative_is_monotonic(void)
 int av_usleep(unsigned usec)
 {
 #if HAVE_NANOSLEEP
-    struct timespec ts = { usec / 1000000, usec % 1000000 * 1000 };
-    while (nanosleep(&ts, &ts) < 0 && errno == EINTR);
+    struct timespec ts = {usec / 1000000, usec % 1000000 * 1000};
+    while (nanosleep(&ts, &ts) < 0 && errno == EINTR)
+        ;
     return 0;
 #elif HAVE_USLEEP
     return usleep(usec);
@@ -95,4 +96,18 @@ int av_usleep(unsigned usec)
 #else
     return AVERROR(ENOSYS);
 #endif
+}
+
+size_t strftime_millis(char *ptr, size_t maxsize, const char *format, const struct timeval *tv)
+{
+    struct tm *tm;
+    size_t result;
+    char *temp_name = malloc(maxsize);
+    if ((tm = localtime(&(tv->tv_sec))) == NULL)
+        return 0;
+
+    strftime(temp_name, maxsize, format, tm);
+    result = snprintf(ptr, maxsize, temp_name, tv->tv_usec / 1000);
+    free(temp_name);
+    return result;
 }

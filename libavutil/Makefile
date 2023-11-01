@@ -90,7 +90,6 @@ HEADERS = adler32.h                                                     \
           video_enc_params.h                                            \
           xtea.h                                                        \
           tea.h                                                         \
-          strftimemillis.h                                              \
           tx.h                                                          \
           film_grain_params.h                                           \
           video_hint.h
@@ -178,7 +177,6 @@ OBJS = adler32.o                                                        \
        xga_font_data.o                                                  \
        xtea.o                                                           \
        tea.o                                                            \
-       strftimemillis.o                                                 \
        tx.o                                                             \
        tx_float.o                                                       \
        tx_double.o                                                      \
