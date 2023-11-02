@@ -21,14 +21,6 @@
 #ifndef AVUTIL_TIME_H
 #define AVUTIL_TIME_H
 
-#include <stdint.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <sys/time.h>
-#include <math.h>
-
-size_t strftime_millis(char *ptr, size_t maxsize, const char *format, const struct timeval *tv);
-
 /**
  * Get the current time in microseconds.
  */

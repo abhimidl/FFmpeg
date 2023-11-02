@@ -25,11 +25,20 @@
 #include "libavcodec/packet.h"
 #include "avformat.h"
 
+#include <stdint.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <sys/time.h>
+#include <math.h>
+
+size_t strftime_millis(char *ptr, size_t maxsize, const char *format, const struct timeval *tv);
+
 struct AVDeviceInfoList;
 
-#define FF_FMT_ALLOW_FLUSH                    (1 << 1)
+#define FF_FMT_ALLOW_FLUSH (1 << 1)
 
-typedef struct FFOutputFormat {
+typedef struct FFOutputFormat
+{
     /**
      * The public AVOutputFormat. See avformat.h for it.
      */
@@ -137,7 +146,7 @@ typedef struct FFOutputFormat {
 
 static inline const FFOutputFormat *ffofmt(const AVOutputFormat *fmt)
 {
-    return (const FFOutputFormat*)fmt;
+    return (const FFOutputFormat *)fmt;
 }
 
 /**
@@ -201,13 +210,14 @@ int ff_write_chained(AVFormatContext *dst, int dst_stream, AVPacket *pkt,
 /**
  * Flags for AVFormatContext.write_uncoded_frame()
  */
-enum AVWriteUncodedFrameFlags {
+enum AVWriteUncodedFrameFlags
+{
 
     /**
      * Query whether the feature is possible on this stream.
      * The frame argument is ignored.
      */
-    AV_WRITE_UNCODED_FRAME_QUERY           = 0x0001,
+    AV_WRITE_UNCODED_FRAME_QUERY = 0x0001,
 
 };
 
